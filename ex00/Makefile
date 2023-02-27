@@ -90,3 +90,5 @@ test: all
 	./$(NAME) ainff
 	./$(NAME) ++inff
 	./$(NAME) --inff
+	./$(NAME) sdfsdf
+	./$(NAME) kjnldkjnfgl
