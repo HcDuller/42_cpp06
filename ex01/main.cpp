@@ -6,7 +6,7 @@
 /*   By: hde-camp <hde-camp@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 23:10:48 by hde-camp          #+#    #+#             */
-/*   Updated: 2023/02/27 23:44:38 by hde-camp         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:06:29 by hde-camp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main(void){
 
 	std::cout << std::endl << std::endl << "After serialization and deserialization: " << std::endl << std::endl;
 	
-	uintptr_t temp = serialize(&valorOriginal);	
+	uintptr_t temp = serialize(&valorOriginal);
 	Data* deserializedData = deserialize(temp);
-	
+
 	std::cout << "X : " << deserializedData->getX() << std::endl;
 	std::cout << "Y : " << deserializedData->getY() << std::endl;
 	std::cout << "Z : " << deserializedData->getZ() << std::endl;

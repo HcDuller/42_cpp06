@@ -6,11 +6,12 @@
 /*   By: hde-camp <hde-camp@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:12:38 by hde-camp          #+#    #+#             */
-/*   Updated: 2023/02/27 20:17:58 by hde-camp         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:34:05 by hde-camp         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
+#include <limits>
 
 #define NaN std::numeric_limits<double>::quiet_NaN()
 #define P_INF std::numeric_limits<double>::infinity()
@@ -84,5 +85,18 @@ double strToDouble(std::string str){
 	std::stringstream strStream;
 	strStream << strInput;
 	strStream >> contentD;
+	if (contentD == std::numeric_limits<double>::max() ||contentD == std::numeric_limits<double>::max()*-1)
+	{
+		std::stringstream checkerStream;
+		checkerStream << contentD;
+		std::string infCheck = checkerStream.str();
+		if (infCheck.compare(strInput.data()))
+		{
+			if (contentD > 0)
+				contentD = P_INF;
+			else
+				contentD = N_INF;
+		}
+	}
 	return (contentD * sign);
 }
