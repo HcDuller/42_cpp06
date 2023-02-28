@@ -3,7 +3,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC = 	main.cpp Bureaucrat.cpp
+SRC = 	main.cpp A.cpp  Base.cpp  B.cpp  C.cpp  generate.cpp  identify.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
